@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chat_bg"
+    tools:context=".ui.chat.ChatActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_messages"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_text_msg_to" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_emoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/emoji_google_category_smileysandpeople"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/input_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input_message"
+        app:tint="@color/emoji_grey_900" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_send_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_image"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/input_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/input_message" />
+
+    <com.vanniktech.emoji.EmojiEditText
+        android:id="@+id/input_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/message_bg"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/hint_message"
+        android:inputType="textMultiLine"
+        android:maxHeight="140dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="48dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_send_img"
+        app:layout_constraintStart_toEndOf="@+id/fab_emoji"
+        tools:text="This is a test chat message that may be very long to read but that's ok This is a test chat message that may be very long to read but that's ok This is a test chat message that may be very long to read but that's ok This is a test chat message that may be very long to read but that's ok This is a test chat message that may be very long to read but that's ok" />
+
+    <ImageView
+        android:id="@+id/btn_send_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingRight="8dp"
+        android:src="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="@+id/input_message"
+        app:layout_constraintEnd_toEndOf="@+id/input_message"
+        app:layout_constraintTop_toTopOf="@+id/input_message" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_scroll_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_scroll_down"
+        android:visibility="gone"
+        app:backgroundTint="#fcfcfc"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/input_message"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
